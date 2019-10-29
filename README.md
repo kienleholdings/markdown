@@ -1,2 +1,3 @@
-# markdown
-A bullshit-free guide to markdown and general writing
+# Markdown Style Guide
+
+> A Bullshit-Free Approach to Markdown
