@@ -4,7 +4,29 @@
 
 ## Table of Contents
 
-1. [Headings](#headings)
+1. [Accessibility](#accessibility)
+2. [Headings](#headings)
+
+## Accessibility
+
+### Images
+
+Images should have an alt tag that accurately describes the content of the image.
+([`no-alt-text`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md045))
+
+> **Why?** For users that have trouble seeing and use a screen reader, images must have alt tags in
+> order to accommodate for those users.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+![Alternate text](image.jpg)
+<!-- Bad -->
+![](image.jpg)
+```
+<!-- prettier-ignore-end -->
+
+**[:arrow_up: Back to Top](#table-of-contents)**
 
 ## Headings
 
