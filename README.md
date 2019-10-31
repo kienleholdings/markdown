@@ -26,8 +26,6 @@ Images should have an alt tag that accurately describes the content of the image
 ```
 <!-- prettier-ignore-end -->
 
-**[:arrow_up: Back to Top](#table-of-contents)**
-
 ## Headings
 
 ### Content
@@ -140,5 +138,3 @@ There should be a space between this and the heading
 There should be a space between this and the heading
 ```
 <!-- prettier-ignore-end -->
-
-**[:arrow_up: Back to Top](#table-of-contents)**
