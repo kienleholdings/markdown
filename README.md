@@ -26,6 +26,33 @@ Images should have an alt tag that accurately describes the content of the image
 ```
 <!-- prettier-ignore-end -->
 
+## Blockquotes
+
+Multiple blockquotes must be separated by something other than a single blank line, and blockquotes
+must have blank spaces surrounding them.
+([`no-blanks-blockquote`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md028),
+[`no-multiple-space-blockquote`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md027))
+
+> **Why?** Some markdown readers interpret blockquotes with spaces between them as one single
+> blockquote, rather than two separate ones.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+
+> This is the first quote
+
+And he also said
+
+> This is the second quote
+<!-- Bad -->
+
+>  This is the first quote
+
+> This is the second quote
+```
+<!-- prettier-ignore-end -->
+
 ## Code Blocks
 
 ### Language
