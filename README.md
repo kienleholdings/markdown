@@ -26,6 +26,48 @@ Images should have an alt tag that accurately describes the content of the image
 ```
 <!-- prettier-ignore-end -->
 
+## Code Blocks
+
+### Language
+
+Code blocks should be marked with their appropriate language.
+([`fenced-code-language`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md040),
+[`proper-names`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md044))
+
+> **Why?** For proper syntax highlighting the language should be specified in each code block.
+
+<!-- prettier-ignore-start -->
+````markdown
+<!-- Good -->
+```markdown
+```
+
+<!-- Bad -->
+```
+```
+````
+<!-- prettier-ignore-end -->
+
+### Style
+
+Code blocks should be written with the fenced style (```) rather than the indented style.
+([`code-block-style`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md046))
+
+> **Why?** You already (in theory) have spaces and tabs in your code. We think it makes more sense
+> to not add any additional tabbing in, as that can mess up copy / pasting.
+
+<!-- prettier-ignore-start -->
+````markdown
+<!-- Good -->
+```markdown
+# Some markdown code
+```
+
+<!-- Bad -->
+    # Some markdown code
+````
+<!-- prettier-ignore-end -->
+
 ## Headings
 
 ### Content
@@ -43,20 +85,14 @@ the document.
 ```markdown
 <!-- Good -->
 # Heading
-
 ## Sub header
-
-# Another Heading
-
+### Another Heading
 ## Sub header
 
 <!-- Bad -->
 # Heading
-
 ## Sub header
-
 # Heading
-
 ## Sub header
 ```
 <!-- prettier-ignore-end -->
@@ -76,12 +112,10 @@ there should be no more than one h1 per document.
 ```markdown
 <!-- Good -->
 # Heading 1
-
 ## Heading 2
 
 <!-- Bad -->
 # Heading 1
-
 ### Heading 3
 ```
 <!-- prettier-ignore-end -->
@@ -120,19 +154,14 @@ line on each side
 ```markdown
 <!-- Good -->
 # Heading
-
 ## Another heading
 
 <!-- Bad -->
 # Incorrect Heading #
-
 Another Incorrect Heading
 =========================
-
 ##  An incorrect heading in ATX
-
 #Nope, not a valid header
-
 There should be a space between this and the heading
 ## A correct heading
 There should be a space between this and the heading
@@ -141,17 +170,6 @@ There should be a space between this and the heading
 
 ## Hyperlinks
 
-### Bare URLs
-
-Links should only be enclosed in link elements, and never in plain text.
-([`no-bare-urls`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md034),
-[`no-space-in-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md039),
-[`no-reversed-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md011))
-
-> **Why?** Depending on what parser the user is using to read Markdown, plain text links may not be
-> clickable. Wrapping your links in the appropriate tag ensures that they function as expected,
-> regardless of what software the end user is using.
-
 ### Content
 
 Links should always point to a valid URL or heading.
@@ -159,3 +177,41 @@ Links should always point to a valid URL or heading.
 
 > **Why?** Clicking on a link and not having it go anywhere breaks the user's expectation of how
 > links work.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+[Kienle Holdings](https://kienle.holdings)
+[Some Fragment](#fragment)
+
+<!-- Bad -->
+[An empty link]()
+[An empty fragment](#)
+```
+<!-- prettier-ignore-end -->
+
+### Style
+
+Links should only be enclosed in properly formatted link elements, and never in plain text.
+([`no-bare-urls`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md034),
+[`no-space-in-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md039),
+[`no-reversed-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md011))
+
+> **Why?** Depending on what parser the user is using to read Markdown, plain text links may not be
+> clickable. Wrapping your links in the appropriate tag ensures that they function as expected,
+> regardless of what software the end user is using. Additionally, if your link is formatted
+> incorrectly, the markdown parser might not interpret it as expected.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+
+[Kienle Holdings](https://kienle.holdings)
+<https://kienle.holdings>
+
+<!-- Bad -->
+https://kienle.holdings
+(https://kienle.holdings)[Kienle Holdings]
+[ Kienle Holdings ](https://kienle.holdings)
+```
+<!-- prettier-ignore-end -->
