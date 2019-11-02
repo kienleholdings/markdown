@@ -138,3 +138,24 @@ There should be a space between this and the heading
 There should be a space between this and the heading
 ```
 <!-- prettier-ignore-end -->
+
+## Hyperlinks
+
+### Bare URLs
+
+Links should only be enclosed in link elements, and never in plain text.
+([`no-bare-urls`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md034),
+[`no-space-in-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md039),
+[`no-reversed-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md011))
+
+> **Why?** Depending on what parser the user is using to read Markdown, plain text links may not be
+> clickable. Wrapping your links in the appropriate tag ensures that they function as expected,
+> regardless of what software the end user is using.
+
+### Content
+
+Links should always point to a valid URL or heading.
+([`no-empty-links`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md042))
+
+> **Why?** Clicking on a link and not having it go anywhere breaks the user's expectation of how
+> links work.
