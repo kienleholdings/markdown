@@ -404,3 +404,61 @@ Horizontal lines should be styled only using the `---` syntax.
 * * *
 ```
 <!-- prettier-ignore-end -->
+
+## Lists
+
+### Indentation
+
+Lists should be properly indented, and have 2 space characters between each level of indentation.
+([`list-indent`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md005),
+[`ul-indent`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md007))
+
+> **Why?** Keeping indents consistent for lists helps keep documents readable and easy to edit, as
+> well as makes sure the editor knows what level the indentation is supposed to be.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+- Foo
+- Bar
+  - Baz
+
+<!-- Bad -->
+- Foo
+ - Bar
+    - Baz
+```
+<!-- prettier-ignore-end -->
+
+### Style
+
+Ordered lists should always be prefixed by `1.` and unordered lists should always be prefixed by
+`-`. Both types of lists should be left aligned and also have blank spaces separating the list from
+the rest of the content, and have spaces between the list marker and the list item content.
+([`ul-style`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md004),
+[`ol-prefix`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md025),
+[`ul-start-left`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md006),
+[`list-marker-space`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md030),
+[`blanks-around-list`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md032))
+
+> **Why?** By keeping our list style consistent, we ensure that each end user knows what a list is,
+> and that the renderer renders the list like the user expects it to.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+- Foo
+- Bar
+
+1. Foo
+2. Bar
+
+<!-- Bad -->
+* Foo
+* Bar
+*Baz
+1. Foo
+2. Bar
+3.Baz
+```
+<!-- prettier-ignore-end -->
