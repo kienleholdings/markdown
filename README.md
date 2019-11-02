@@ -462,3 +462,27 @@ the rest of the content, and have spaces between the list marker and the list it
 3.Baz
 ```
 <!-- prettier-ignore-end -->
+
+## Resources
+
+### Markdown
+
+- [Adam P's Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [The original markdown project](https://daringfireball.net/projects/markdown/)
+- [Awesome Markdown](https://github.com/mundimark/awesome-markdown) (A list of Markdown learning
+  resources)
+
+### Tools
+
+- [Markdownlint](https://github.com/DavidAnson/markdownlint)
+- [Markdownlint for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Markdownlint CLI](https://github.com/igorshubovych/markdownlint-cli)
+
+### Configurations
+
+- [Kienle Holdings `.markdownlint.json`](https://github.com/kienleholdings/markdown/blob/master/.markdownlint.json)
+
+## Amendments
+
+This guide is subject to change. Do you see something that can be improved on? Go ahead and give it
+a fork and shoot us over a PR. See an issue? Don't forget to log it!
