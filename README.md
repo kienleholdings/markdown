@@ -80,6 +80,13 @@ console.log('Hi, this is JavScript!);
 
 ## Document
 
+### Blank Spaces
+
+There should be no unnecessary blank or trailing spaces in the document.
+([`no-multiple-blanks`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md012), [`no-trailing-spaces`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md009))
+
+> **Why?** This keeps the file's formatting clean and the file size lean.
+
 ### End of File
 
 Every file should end with a blank line.
@@ -299,7 +306,6 @@ Links should only be enclosed in properly formatted link elements, and never in 
 <!-- prettier-ignore-start -->
 ```markdown
 <!-- Good -->
-
 [Kienle Holdings](https://kienle.holdings)
 <https://kienle.holdings>
 
@@ -307,5 +313,67 @@ Links should only be enclosed in properly formatted link elements, and never in 
 https://kienle.holdings
 (https://kienle.holdings)[Kienle Holdings]
 [ Kienle Holdings ](https://kienle.holdings)
+```
+<!-- prettier-ignore-end -->
+
+## Inline Elements
+
+### Code
+
+Inline code elements should be properly formatted, with no spaces.
+([`no-space-in-code`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md038))
+
+> **Why?** Generally people copy-paste and then execute code. Extra spaces might mess up the
+> expected output of the code.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+`Some code`
+
+<!-- Bad -->
+` some code `
+```
+<!-- prettier-ignore-end -->
+
+### Emphasis Markers (Bold, Italic, etc.)
+
+Emphasis markers should be properly formatted, with no spaces.
+([`no-space-in-emphasis`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md037))
+
+> **Why?** Depending on your markdown processor, emphasis markers with spaces may not properly
+> render.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+**Bold text**
+_Italic Text_
+~~Strikethrough text~~
+
+<!-- Bad -->
+** Bold text **
+_ Italic Text _
+~~ Strikethrough text ~~
+```
+<!-- prettier-ignore-end -->
+
+### Horizontal Line
+
+Horizontal lines should be styled only using the `---` syntax.
+([`hr-style`](https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md035))
+
+> **Why?** This keeps the style consistent with list items, and doesn't include any extra
+> characters.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+---
+
+<!-- Bad -->
+- - -
+***
+* * *
 ```
 <!-- prettier-ignore-end -->
