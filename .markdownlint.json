@@ -37,7 +37,7 @@
   "no-multiple-space-blockquote": true,
   "no-blanks-blockquote": true,
   "ol-prefix": {
-    "style": "ordered"
+    "style": "one"
   },
   "list-marker-space": true,
   "blanks-around-fences": true,

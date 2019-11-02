@@ -5,7 +5,7 @@
 ## Table of Contents
 
 1. [Accessibility](#accessibility)
-2. [Headings](#headings)
+1. [Headings](#headings)
 
 ## Accessibility
 
@@ -50,23 +50,117 @@ Code blocks should be marked with their appropriate language.
 
 ### Style
 
-Code blocks should be written with the fenced style (```) rather than the indented style.
-([`code-block-style`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md046))
+Code blocks should be written with the fenced style (```) rather than the indented style, and have
+blank lines around the block.
+([`code-block-style`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md046),
+[`blanks-around-fences`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md031))
 
 > **Why?** You already (in theory) have spaces and tabs in your code. We think it makes more sense
 > to not add any additional tabbing in, as that can mess up copy / pasting.
 
 <!-- prettier-ignore-start -->
+
 ````markdown
 <!-- Good -->
-```markdown
-# Some markdown code
+```JavaScript
+console.log('Hi, this is JavScript!);
 ```
 
 <!-- Bad -->
     # Some markdown code
+
+
+# Some content
+```JavaScript
+console.log('Hi, this is JavScript!);
+```
+## Some more content
+<!-- prettier-ignore-end -->
+````
+
+## Document
+
+### End of File
+
+Every file should end with a blank line.
+([`single-trailing-newline`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md047))
+
+> **Why?** It makes your Git diffs look a lot nicer, and keeps compatibility for some older tools.
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+The last line before the end of file
+
+End of the file
+
+<!-- Bad -->
+The last line before the end of file
+End of the file
+```
+<!-- prettier-ignore-end -->
+
+### Inline HTML
+
+Besides comments, there should be no inline HTML in your markdown document.
+
+**Why?** Some markdown renderers don't support HTML.
+([`no-inline-html`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md033))
+
+<!-- prettier-ignore-start -->
+````markdown
+<!-- Good -->
+```html
+<h1>This is some html</h1>
+```
+
+<!-- Bad -->
+<h1>This is some html</h1>
 ````
 <!-- prettier-ignore-end -->
+
+### Line Length
+
+Lines should have a maximum length of 100 characters.
+([`line-length`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md013))
+
+> **Why?** As monitors become higher resolution, an 80 character "standard" limit is becoming
+> obsolete. We think that 100 is plenty, and doesn't mess up your file's formatting too much.
+
+<!-- markdownlint-disable line-length -->
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl venenatis, maximus lorem ac,
+sodales ipsum posuere.
+
+<!-- Bad -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl venenatis, maximus lorem ac, sodales ipsum posuere.
+```
+<!-- prettier-ignore-end -->
+
+<!-- markdownlint-enable line-length -->
+
+### Tabbing
+
+Documents should only use spaces, not tabs.
+([`no-hard-tabs`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md010))
+
+> **Why?** Kienle Holdings decided on spaces over tabs for our entire codebase. This is 100%
+> opinion-based.
+
+<!-- markdownlint-disable no-hard-tabs -->
+<!-- prettier-ignore-start -->
+```markdown
+<!-- Good -->
+  * This list starts with a space
+
+<!-- Bad -->
+	* This list starts with a tab
+```
+<!-- prettier-ignore-end -->
+
+<!-- markdownlint-enable no-hard-tabs -->
 
 ## Headings
 
