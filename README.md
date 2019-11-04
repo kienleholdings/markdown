@@ -137,9 +137,9 @@ End of the file
 ### Inline HTML
 
 Besides comments, there should be no inline HTML in your markdown document.
-
-**Why?** Some markdown renderers don't support HTML.
 ([`no-inline-html`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md033))
+
+> **Why?** Some markdown renderers don't support HTML.
 
 <!-- prettier-ignore-start -->
 ````markdown
@@ -268,8 +268,8 @@ Headings should always start on the left.
 ### Style
 
 Headings should be written only in open ATX style, not closed ATX or Setext. Additionally, headings
-should have one space between the heading definition and the text, as well as surrounded by a blank
-line on each side
+should have one space between the heading definition and the text. Heading should also be surrounded
+by a blank line on each side.
 ([`heading-style`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md001),
 [`no-missing-space-atx`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md018),
 [`no-multiple-space-atx`](https://github.com/DavidAnson/markdownlint/blob/HEAD/doc/Rules.md#md019),
@@ -462,6 +462,13 @@ the rest of the content, and have spaces between the list marker and the list it
 3.Baz
 ```
 <!-- prettier-ignore-end -->
+
+## Code Style
+
+All Markdown documents should confirm to the Kienle Holdings Prettier Style Guide. More information
+as well as configuration can be found [here](https://github.com/kienleholdings/prettier).
+Additionally, Markdownlint and Prettier's CLI should be used in CI to ensure that files are properly
+formatted.
 
 ## Resources
 
