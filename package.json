@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/kienleholdings/markdown#readme",
   "devDependencies": {
-    "markdownlint-cli": "^0.19.0",
-    "prettier": "^1.18.2"
+    "markdownlint-cli": "^0.23.1",
+    "prettier": "^2.0.5"
   }
 }
